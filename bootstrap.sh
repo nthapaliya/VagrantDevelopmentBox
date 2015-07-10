@@ -7,6 +7,10 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo 'apt-get update'
 apt-get update >/dev/null
+apt-get -y dist-upgrade >/dev/null
+apt-get -y upgrade >/dev/null
+apt-get -y autoclean >/dev/null
+apt-get -y autoremove >/dev/null
 
 echo 'Installing gcc and friends'
 apt-get -y install build-essential >/dev/null
@@ -18,7 +22,8 @@ apt-get -y install python-software-properties python-pip >/dev/null
 # see https://github.com/sstephenson/ruby-build/wiki
 echo 'Installing ruby compilation dependencies'
 apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev >/dev/null
-apt-get -y install libmysqlclient-dev >/dev/null
+# others required
+apt-get -y install libmysqlclient-dev nodejs >/dev/null
 
 echo 'Installing zsh, ag, etc'
 apt-get -y install zsh silversearcher-ag >/dev/null
