@@ -19,7 +19,8 @@ apt-get -y install python-software-properties python-pip >/dev/null
 echo 'Installing ruby compilation dependencies'
 apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev >/dev/null
 apt-get -y install mysql-server mysql-client libmysqlclient-dev >/dev/null
-apt-get -y install nodejs >/dev/null
+apt-get -y install nodejs npm >/dev/null
+apt-get -y install imagemagick >/dev/null
 
 echo 'Installing zsh, ag, etc'
 apt-get -y install zsh zsh-doc silversearcher-ag >/dev/null
