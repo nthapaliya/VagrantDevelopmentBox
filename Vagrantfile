@@ -12,6 +12,9 @@ Vagrant.configure(2) do |config|
     v.cpus = 2
   end
 
+  # for localhost forward
+  config.vm.network :forwarded_port, guest: 3000, host: 3000
+  
   config.ssh.forward_agent = true
 
   # https://github.com/mitchellh/vagrant/issues/1673#issuecomment-28288042
