@@ -4,29 +4,29 @@
 Vagrant.configure(2) do |config|
   # https://docs.vagrantup.com.
 
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.define "DevelopmentServer"
+  config.vm.box = 'ubuntu/trusty64'
+  config.vm.define 'DevelopmentServer'
 
-  config.vm.provider "virtualbox" do |v|
+  config.vm.provider 'virtualbox' do |v|
     v.memory = 2048
     v.cpus = 2
   end
 
   # for localhost forward
   config.vm.network :forwarded_port, guest: 3000, host: 3000
-  
+
   config.ssh.forward_agent = true
 
   # https://github.com/mitchellh/vagrant/issues/1673#issuecomment-28288042
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
-  config.vm.provision "Bootstrap: root", type: "shell" do |s|
-    s.path = "bootstrap.sh"
+  config.vm.provision 'Bootstrap: root', type: 'shell' do |s|
+    s.path = 'bootstrap.sh'
   end
 
-  config.vm.provision "Bootstrap: clone", type: "shell" do |s|
+  config.vm.provision 'Bootstrap: clone', type: 'shell' do |s|
     s.privileged = false
-    s.path = "clone.sh"
+    s.path = 'clone.sh'
   end
 
   # config.vm.provision "Bootstrap: install", type: "shell" do |s|
@@ -39,5 +39,5 @@ Vagrant.configure(2) do |config|
   #   s.destination = "~/run-me.sh"
   # end
 
-  config.vm.post_up_message = "Have fun!"
+  config.vm.post_up_message = 'Have fun!'
 end

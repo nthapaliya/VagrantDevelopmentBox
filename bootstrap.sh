@@ -21,6 +21,7 @@ apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev libread
 apt-get -y install mysql-server mysql-client libmysqlclient-dev >/dev/null
 apt-get -y install nodejs npm >/dev/null
 apt-get -y install imagemagick >/dev/null
+apt-get -y install phantomjs >/dev/null
 
 echo 'Installing zsh, ag, etc'
 apt-get -y install zsh zsh-doc silversearcher-ag >/dev/null
