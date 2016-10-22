@@ -29,15 +29,10 @@ Vagrant.configure(2) do |config|
     s.path = 'clone.sh'
   end
 
-  # config.vm.provision "Bootstrap: install", type: "shell" do |s|
-  #   s.privileged = false
-  #   s.path = "install.sh"
-  # end
-
-  # config.vm.provision "Post-install scripts", type: "file" do |s|
-  #   s.source = "run-me.sh"
-  #   s.destination = "~/run-me.sh"
-  # end
+  config.vm.provision 'Post-install scripts', type: 'file' do |s|
+    s.source = 'install.sh'
+    s.destination = '~/run-me.sh'
+  end
 
   config.vm.post_up_message = 'Have fun!'
 end
